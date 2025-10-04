@@ -43,10 +43,12 @@ dependencies {
 
     // Security
     implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.cloud:spring-cloud-stream'
     testImplementation 'org.springframework.security:spring-security-test'
 
     // JWT (jjwt) - API + impl + jackson support
     implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+    testImplementation 'org.springframework.cloud:spring-cloud-stream-test-binder'
     runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
     runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5' // if you parse/serialize JWT with Jackson
 
@@ -58,6 +60,8 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     runtimeOnly 'org.postgresql:postgresql'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    implementation 'io.micrometer:micrometer-registry-cloudwatch2'
+
 }
 
 dependencyManagement {
